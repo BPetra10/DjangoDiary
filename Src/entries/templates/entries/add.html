@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Naplóbejegyzés</title>
+   
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                   Kedves naplóm!
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <form action="{% url 'add' %}" method="POST">
+                {% csrf_token %}
+                <div class="field">
+                    {{ form.text }}
+                </div>
+                <div class="control">
+                    <button class="button">Mentés</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+<style>
+    body
+    {
+        background-color:burlywood;
+    }
+    .hero-body 
+    {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding: 2rem 1.5rem;
+    }
+    .hero.is-primary 
+    {
+    background-color: #00d1b2;
+    color: #fff;
+    }
+    div 
+    {
+    display: block;
+    }
+    .hero.is-primary .title 
+    {
+        color: black;
+        font-size: 50px;
+        text-align: center;
+        font-family:'Segoe Print','Courier New', Courier, monospace;
+    }
+    body, h1, html, p, textarea
+    {
+        margin: 0;
+        padding: 0;
+    }
+    textarea
+    {
+        margin-top: 20px;
+        resize: none;
+        height: 500px;
+        max-height: 500px;
+        width: 450px;
+        max-width: 450px;
+        font-size:xx-large;
+        font-family:'Sitka Heading','Courier New', Courier, monospace;
+        border-radius: 12px;
+    }
+    .button
+    {
+        margin-top: 10px;
+        background-color: #00d1b2;
+        width: 450px;
+        max-width: 450px;
+        height: 40px;
+        max-height: 40px;
+        font-size:xx-large;
+        font-family:'Sitka Heading','Courier New', Courier, monospace;
+        border: none;
+        border-radius: 12px;
+    }
+    .button:hover
+    {
+        background-color: crimson;
+    }
+    .field,.control
+    {
+        width: fit-content;
+        margin: auto;
+    }
+</style>
+</html>

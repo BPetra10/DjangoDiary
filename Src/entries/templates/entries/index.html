@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kedves naplóm!</title>
+</head>
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Kedves naplóm!
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+
+            <article class="media">
+                <div class="media-content">
+                    <div class="link">
+                        <a href="{% url 'add' %}">Új bejegyzés hozzáadása</a>
+                    </div>
+                </div>
+            </article>
+
+            {% for entry in entries %}
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>{{ entry.posted_date }}</strong>
+                            <br> {{ entry.text }}
+                        </p>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+<style>
+    body
+    {
+        background-color:burlywood;
+    }
+    .hero-body 
+    {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding: 2rem 1.5rem;
+    }
+    .hero.is-primary 
+    {
+    background-color: #00d1b2;
+    color: #fff;
+    }
+    div 
+    {
+    display: block;
+    }
+    .hero.is-primary .title 
+    {
+        color: black;
+        font-size: 50px;
+        font-family:'Segoe Print','Courier New', Courier, monospace;
+    }
+    body, h1, html
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .content
+    {
+        font-size:20px;
+        font-family:'Courier New', Courier, monospace;
+        margin-top: 10px;
+        background-color: aliceblue;
+        width: fit-content;
+        padding-right: 20px;
+        padding-left: 20px;
+        border-radius: 12px;
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .link
+    {
+        font-size:30px;
+        font-family:'Bradley Hand ITC','Courier New', Courier, monospace;
+        margin-top: 10px;
+        border-radius: 12px;
+        background-color: #00d1b2;
+        width: fit-content;
+        border: 2px solid black;
+    }
+    a
+    {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    a:hover
+    {
+        background-color: crimson;
+    }
+</style>
+</html>
