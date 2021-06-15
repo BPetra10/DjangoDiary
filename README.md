@@ -1,4 +1,4 @@
-# TodoApiDjango
+# DjangoDiary
 
 Klónozd le/Töltsd le és csomagold ki
 Lépj be a mappájába
